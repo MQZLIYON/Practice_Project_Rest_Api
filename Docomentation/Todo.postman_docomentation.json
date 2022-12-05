@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "439f6ed0-b06c-41d3-851d-adef55c22aa6",
+		"name": "Todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24253519"
+	},
+	"item": [
+		{
+			"name": "User logging Registration",
+			"item": [
+				{
+					"name": "CreateProfile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"FirstName\": \"admin1\",\r\n    \"LastName\": \"admin1\",\r\n    \"Email\": \"mushfiqliyon@outlook.com\",\r\n    \"Mobile\": \"01884239103\",\r\n    \"City\": \"Dhaka\",\r\n    \"UserName\": \"admin1\",\r\n    \"Password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/CreateProfile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"CreateProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserLogging",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\": \"admin1\",\r\n    \"Password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/UserLogging",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"UserLogging"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Select Profile / Update Profile",
+			"item": [
+				{
+					"name": "SelectProfile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/SelectProfile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"SelectProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProfile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"FirstName\": \"gd\",\r\n    \"LastName\": \"gsfg\",\r\n    \"Email\": \"mushfgdifsfsqliyon@outlook.com\",\r\n    \"Mobile\": \"0188sg4239103\",\r\n    \"City\": \"gs\",\r\n    \"Password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/UpdateProfile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"UpdateProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TodoList",
+			"item": [
+				{
+					"name": "CreateTodoList",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"TodoSubject\":\" New TodoList\",\r\n    \"TodoDescription\":\"This is my new todolist\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/CreateTodoList",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"CreateTodoList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SelectTodo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/SelectTodo",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"SelectTodo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTodo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"TodoSubject\":\"Update Todo\",\r\n    \"TodoDescription\":\"This is update todo.\",\r\n    \"_id\":\"638cae43622e3291433837af\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/UpdateTodo",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"UpdateTodo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateStatus",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"TodoStatus\":\"Complete\",\r\n    \"_id\":\"638cae43622e3291433837af\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/UpdateStatus",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"UpdateStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveTodoItem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"638cb0b98fee6d5d6d8057f6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/RemoveTodoItem",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"RemoveTodoItem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SelectTodoByStatus",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"TodoStatus\":\"New\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/SelectTodoByStatus",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"SelectTodoByStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SelectTodoByDate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"FromDate\":\"2022-12-02\",\r\n    \"ToDate\":\"2022-12-16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/SelectTodoByDate",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"SelectTodoByDate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8080/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzAyNjgzMDgsImRhdGEiOnsiX2lkIjoiNjM4Y2YzZDgzMzkwMzg2NzcyZmFmNzZkIiwiRmlyc3ROYW1lIjoiYWRtaW4xIiwiTGFzdE5hbWUiOiJhZG1pbjEiLCJFbWFpbCI6Im11c2hmaXFsaXlvbkBvdXRsb29rLmNvbSIsIk1vYmlsZSI6IjAxODg0MjM5MTAzIiwiQ2l0eSI6IkRoYWthIiwiVXNlck5hbWUiOiJhZG1pbjEiLCJQYXNzd29yZCI6IjEyMzQ1Njc4OSJ9LCJpYXQiOjE2NzAxODE5MDh9.Ad3n4xAnfuAWsaqNOqs4AKPRXs-oiyezpsM22kLNyps",
+			"type": "string"
+		},
+		{
+			"value": "",
+			"type": "string"
+		}
+	]
+}
