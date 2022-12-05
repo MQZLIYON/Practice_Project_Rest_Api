@@ -35,8 +35,8 @@ const limiter = rateLimit({
 app.use(limiter);
 
 //Mongodb Database Connection
-const URI = "mongodb+srv://mqz:QDGtyWQUbiTmkF8l@cluster0.jidpjjn.mongodb.net/Todo";
-const option = {user:'mqz',pass:'QDGtyWQUbiTmkF8l',autoIndex:true};
+const URI = "mongodb://localhost:27017/Todo";
+const option = {user:'',pass:'',autoIndex:true};
 mongoose.connect(URI,option,(error)=>{
     if (error){
         console.log(error);
